@@ -19,7 +19,7 @@ let pokemonList = [
 ];
 
 for (let i=0; i < pokemonList.length; i++){
-    document.write(i)
+    document.write(pokemonList.name)
 
 
 }
