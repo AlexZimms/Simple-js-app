@@ -17,13 +17,12 @@ let pokemonList = [
 
     // Creating a list of pokemon and their heights. Adding conditionals to highlight large pokemon!
     
-for (let i=0; i < pokemonList.length; i++) {
-    document.write(pokemonList[i].name + " (Height:" + pokemonList[i].height + ")  ");
+for (let i=0; i < pokemonList.length; i++){
+    document.write('<p>' + pokemonList[i].name + " (Height:" + pokemonList[i].height + ")  ");
 
     if (pokemonList[i].height > 6){
         document.write(" Wow that's huge!");
     }
-
 
 
 };
