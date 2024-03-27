@@ -32,7 +32,7 @@ let pokemonRepository = (function () {
     //   Adding a new pokemon to the pokemonList
 
     pokemonRepository.add({ name:'Pikachu', height: 1.4, types: 'electric'});
-    
+
     // Creating a function that will return each iteration of the pokemon list
 
     pokemonRepository.getAll().forEach(function (pokemon) {
