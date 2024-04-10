@@ -1,6 +1,10 @@
-    body {
-        background-color: aqua;
-        font-family:Arial, Helvetica, sans-serif;
-        font-weight: 400;
 
-  }
+button {
+    background-color: rgb(146, 72, 72);
+    border-color: rgb(41, 3, 41);
+    color-interpolation-filters: auto;
+    border-radius: 8px;
+    padding: 18px;
+    font-size: 20px;
+
+}
