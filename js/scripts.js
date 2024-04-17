@@ -3,18 +3,10 @@ let pokemonRepository = (function () {
     //Url for pokemon API
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
     //retrieving date from API
-    function getAll () {
-      return pokemonList;
-    }
+    let getAll = () => pokemonList;
     //Function to add to pokemonList
     function add(pokemon) {
-      if (
-        typeof pokemon === 'object' && 'name' in pokemon
-      ) {
         pokemonList.push(pokemon);
-      } else {
-        console.error('pokemon is not correct');
-      }
     };
     // Creating a function that will return each iteration of the pokemon list
     function addListItem(pokemon){
@@ -52,7 +44,7 @@ let pokemonRepository = (function () {
       return fetch(url).then(function (response) {
         return response.json();
       }).then(function (details) {
-        // Now we add the details to the item
+        // adding the details 
         item.imageUrl = details.sprites.front_default;
         item.height = details.height;
         item.types = details.types;
@@ -60,11 +52,8 @@ let pokemonRepository = (function () {
         console.error(e);
       });
     }
-  
-    function showDetails(pokemon) {
-      pokemonRepository.loadDetails(pokemon).then(function () {
-        let modalContainer = document.querySelector('#modal-container');
-        function showModal(item) {
+    function showModal(item) {
+            let modalContainer = document.querySelector('#modal-container');
             modalContainer.innerHTML = '';
             let modal = document.createElement('div');
             modal.classList.add('modal');
@@ -91,32 +80,37 @@ let pokemonRepository = (function () {
             modalContainer.appendChild(modal);
 
             modalContainer.classList.add('is-visible');
-        }
-
-        function hideModal() {
+          function hideModal() {
             modalContainer.classList.remove('is-visible');
-        }
-
-        window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-                hideModal();
-            }
-        });
-
-        modalContainer.addEventListener('click', (e) => {
+            modalContainer.addEventListener('click', (e) => {
             let target = e.target;
             if (target === modalContainer) {
                 hideModal();
             }
-        });
+            // adding listener for additional modal closing
+            window.addEventListener('keydown', (e) => {
+              if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+                hideModal();
+              }
+            });
+          });
         
         document.querySelector('.button-class').addEventListener(
             'click', function () {
                 showModal(pokemon);
             })
-
-    });
-}
+        };
+        };
+        // linking css to hide modal
+        
+        
+        
+  // adding modal for pokemon
+    function showDetails(pokemon) {
+      pokemonRepository.loadDetails(pokemon).then(function () {
+        showModal(pokemon);
+      });
+    };
     
   
     return {

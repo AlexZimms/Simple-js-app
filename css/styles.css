@@ -16,7 +16,7 @@ html {
       border-radius: 5px;
       padding: 10px 24px;
       position: center;
-      /* customize, erase bullet points, add webkit transitions, review CSS basics */
+      /* erase bullet points and customizing button */
   }
   ul {
     list-style-type: none;
@@ -31,13 +31,13 @@ html {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
   
-    /* to show it above other content */
+    /* to show above webpage */
     z-index: 999; 
   
     /* to allow scrolling if the screen is not high enough*/
     overflow: auto; 
   
-    /* this is used to center the modal */
+    /*centering the modal */
     display: grid;
     text-align: center;
   }
