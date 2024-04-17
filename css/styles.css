@@ -1,10 +1,34 @@
-
-button {
+html {
+    height: 100%;
+    width: 100%;
+  }button {
     background-color: rgb(146, 72, 72);
     border-color: rgb(41, 3, 41);
     color-interpolation-filters: auto;
     border-radius: 8px;
     padding: 18px;
     font-size: 20px;
-
 }
+  
+  .button-class {
+      background-color: #b92c2c;
+      border: none;
+      color: rgb(255, 255, 255);
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      margin: 4px 4px;
+      cursor: pointer;
+      border-radius: 5px;
+      padding: 10px 24px;
+      position: center;
+      /* erase bullet points and customizing button */
+  }
+  #modal-container {
+    display: none;
+  }
+  
+  #modal-container.is-visible {
+    display: block;
+  }
